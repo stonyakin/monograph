@@ -57,7 +57,7 @@ def f(x):
 	# T=[np.linalg.norm(np.subtract(x,i)) for i in Dots]
 	# D=np.argmax(T)
 	# return max(T)
-	return sum(math.sqrt(i) for i in x)/n # Square root.
+	return -sum(math.sqrt(i) for i in x)/n # Square root.
 	# Maximum distance (with rho):
 	# global D,c
 	# c=1
@@ -76,7 +76,7 @@ def f(x):
 def Grad_f(x):
 	# return sum(np.subtract(x,i)/np.linalg.norm(np.subtract(x,i)) for i in Dots)/r # Medium distance.
 	# return np.subtract(x,Dots[D])/np.linalg.norm(np.subtract(x,Dots[D])) # Maximum distance.
-	return [1/(2*n*math.sqrt(i)) for i in x] # Square root.	
+	return [-1/(2*n*math.sqrt(i)) for i in x] # Square root.	
 	# Maximum distance (with rho):
 	# T=np.subtract(x,Dots[D])
 	# return c*T/np.linalg.norm(T)
